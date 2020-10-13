@@ -1,0 +1,379 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "base"
+
+.article
+	&__main-image
+		height: 300px
+		object-fit: cover
+		width: 100%
+		margin-bottom: 20px
+	&__main-description
+		padding: 20px
+		margin-bottom: 20px
+	&__main-text
+		padding: 20px
+		margin-bottom: 20px
+		& p
+			margin-bottom: 10px
+		& h2
+			margin-top: 30px
+			margin-bottom: 10px
+			text-transform: uppercase
+			font-family: robotoCondensed-vhavke, sans-serif
+		& h3
+			margin-top: 20px
+			margin-bottom: 10px
+			text-transform: uppercase
+			font-family: robotoCondensed-vhavke, sans-serif
+		& ol, & ul
+			margin-bottom: 10px
+			margin-left: 40px
+		& blockquote
+			padding: 0 30px 0 70px
+			font-style: italic
+			border-left: 2px solid $accent
+			padding-left: 18px
+			margin-bottom: 10px
+		& img
+			max-width: 100%
+			height: auto
+			margin: 20px 0px
+	&__main-statistics
+		padding: 20px
+		margin-bottom: 20px
+		display: flex
+		justify-content: space-between
+
+.a-statistics
+	&__like,	&__dislike
+		margin-right: 20px
+		cursor: pointer
+	&__like i,	&__dislike i
+		transition: .2s color
+	
+.recipe
+	margin-bottom: 20px
+	&__title-block
+		margin-bottom: 20px
+		line-height: 1em
+		text-transform: uppercase
+		font-family: robotoCondensed-vhavke, sans-serif
+
+.recipe__top
+	display: flex
+	margin-bottom: 20px
+
+.recipe__ingredients
+	padding: 20px
+	flex: 2
+	margin-right: 20px
+
+.ingredients__group
+	margin-top: 20px
+	&-title
+		margin-bottom: 10px
+		line-height: 1em
+		font-family: robotoCondensed-vhavke, sans-serif
+	& p
+		padding: 5px 0px
+		font-style: italic
+		line-height: 1.4em
+	& p + p
+		border-top: 1px solid $dop_bg-color
+
+.recipe__info
+	padding: 20px
+	flex: 1
+	&-option
+		margin-top: 20px
+	&-name
+		line-height: 1em
+	&-value
+		font-style: italic
+	
+.recipe__steps
+	padding: 20px
+
+.steps__group
+	margin-top: 20px
+	&-title
+		margin-bottom: 10px
+	&-block
+		display: flex
+		& img
+			max-width: 200px
+			max-height: 150px
+			object-fit: cover
+			margin-right: 20px
+			border-radius: 3px
+
+.page-content__user
+	position: relative
+	min-height: 250px
+	margin-bottom: 65px
+	display: flex
+	align-items: center
+	text-align: center
+
+.user
+	&__title-block
+		line-height: 1em
+		text-transform: uppercase
+		font-family: robotoCondensed-vhavke, sans-serif
+	&__back-gradient
+		position: absolute
+		width: 100%
+		height: 100%
+		background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%)
+		background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%)
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%)
+	&__avatar
+		width: 100px
+		height: 100px
+		object-fit: cover
+		position: absolute
+		left: 50%
+		margin-left: -50px
+		bottom: -50px
+		border: 10px solid $bg-color
+		border-radius: 50px
+		background: $bg-color
+	&__description
+		flex: 1
+		padding: 0px 100px
+		color: #ffffff
+		z-index: 10
+	&__social
+		position: absolute
+		bottom: 20px
+		right: 20px
+		z-index: 1
+		&-link
+			color: #fff
+			transition: .2s opacity
+			margin-left: 5px
+			&:hover
+				opacity: .7
+
+.user__recipe
+	padding: 20px
+
+.user__public
+	margin-bottom: 20px
+	height: 150px
+	color: $text-color
+	&:hover
+		text-decoration: none
+	&:hover .public__title
+		color: $accent
+	
+.publication__section .user__public
+	&:hover .public__title
+		color: $text-color
+	
+.public
+	&__image
+		float: left
+		width: 220px
+		height: 150px
+		object-fit: cover
+		margin-right: 20px
+		border-radius: 3px 0px 0px 3px
+	&__title
+		padding-top: 15px
+		padding-bottom: 5px
+		padding-right: 20px
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
+		font-family: robotoCondensed-vhavke, sans-serif
+		text-transform: uppercase
+		font-size: 1.1em
+		font-weight: 700
+		transition: 0.2s color
+	&__action
+		min-width: 84px
+		padding-top: 15px
+		padding-bottom: 5px
+		padding-right: 20px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		& i
+			cursor: pointer
+			color: $dop_text-color
+			transition: .2s color
+		& .fa-link:hover
+			color: #178fff
+		& .fa-pencil:hover
+			color: #4ded5f
+		& .fa-trash:hover
+			color: #ed4d4d
+	&__description
+		padding-right: 20px
+		color: #aaa
+		font-style: italic
+		height: 58px
+		line-height: 1.2em
+		display: -webkit-box
+		-webkit-line-clamp: 3
+		-webkit-box-orient: vertical
+		overflow: hidden
+		text-overflow: ellipsis
+	&__date
+		margin-top: 3px
+		color: $accent
+		text-align: right
+		margin-right: 20px
+		font-size: 1em
+		font-family: robotoCondensed-vhavke, sans-serif
+
+.publication__section__title
+	display: flex
+	justify-content: space-between
+	align-items: center
+	cursor: pointer
+	transition: .2s color
+	&:hover i
+		color: $accent
+	
+.publication_add
+	margin-bottom: 20px
+	& .pa__meta
+		margin-top: 20px
+	& .pa__meta__title
+		display: flex
+		align-items: center
+	& .pa__meta__title-icon
+		width: 10px
+		height: 10px
+		border: 5px solid transparent
+		border-top: 5px solid #178fff
+		transition: .2s all
+		margin-top: 5px
+		margin-left: 10px
+		&.close
+			transform: rotate(180deg)
+			margin-top: -5px
+	& .pa__meta__content
+		margin-top: 20px
+	
+.minForm
+	padding: 20px
+	width: 100%
+	& button
+		display: block
+		margin: 0 auto
+
+.ingredient_block
+	padding: 20px
+	border: 1px solid #e6e6e6
+	border-radius: 3px
+	margin-bottom: 20px
+	&:last-child
+		margin-bottom: 0
+	& .ingredient_header
+		display: flex
+		align-items: center
+		margin-bottom: 20px
+		& .header_action
+			width: 80px
+			text-align: right
+			& i
+				padding: 5px 6px
+				cursor: pointer
+				border-radius: 3px
+				transition: .2s all
+				&:first-child
+					margin-left: 5px
+				&:hover
+					color: #fff
+			& .fa-plus
+				color: $accent
+				&:hover
+					background: $accent
+			& .fa-times
+				color: #ed4d4d
+				&:hover
+					background: #ed4d4d
+	& .form__group
+		display: flex
+		align-items: center
+		position: relative
+		& i
+			position: absolute
+			right: 7px
+			padding: 5px 6px
+			cursor: pointer
+			border-radius: 3px
+			transition: .2s all
+			&:hover
+				color: #fff
+		& .fa-times
+			color: #ed4d4d
+			&:hover
+				background: #ed4d4d
+.group_block_del
+	position: absolute
+	top: 12px
+	right: 20px
+	padding: 5px 6px
+	cursor: pointer
+	border-radius: 3px
+	transition: .2s all
+	color: $accent
+	&:hover
+		background: $accent
+		color: #fff
+	
+.step_block
+	display: flex
+	padding: 20px
+	border: 1px solid #e6e6e6
+	border-radius: 3px
+	margin-bottom: 20px
+	&:last-child
+		margin-bottom: 0
+	& .step_image
+		position: relative
+		width: 100%
+		max-width: 200px
+		max-height: 176px
+		margin-right: 20px
+		border-radius: 3px
+		& label
+			position: absolute
+			cursor: pointer
+			width: 100%
+			height: 100%
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				background: rgba(0, 0, 0, 0.5)
+				border-radius: 3px
+				transition: .2s opacity
+				opacity: 0
+				cursor: pointer
+			&:hover::after
+				opacity: 1
+
+.del_step
+	position: absolute
+	top: 12px
+	right: 20px
+	padding: 5px 6px
+	cursor: pointer
+	border-radius: 3px
+	transition: .2s all
+	color: #ed4d4d
+	&:hover
+		background: #ed4d4d
+		color: #fff
+		
+@import "media" // Всегда в конце

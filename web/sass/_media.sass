@@ -1,0 +1,115 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	
+	
+	.mobile
+		display: block
+	
+	.no-mobile
+		display: none
+	
+	.nav__button 
+		border-right: none
+	
+		& .accent-color
+			color: $text-color
+	
+	.main .content-position
+		display: block
+	
+	.main__sidebar
+		width: 100%
+		margin-left: 0px
+	
+	.sidebar__filter
+		position: fixed
+		top: 57px
+		left: 0
+		width: 100vw
+		height: calc(100vh - 57px)
+		overflow-y: auto
+		z-index: 98
+		&.hidden
+			display: none
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.page-content__articles .article-preview
+		width: 49%
+	
+	.recipe__top
+		display: block
+	
+	.recipe__ingredients
+		margin-right: 0
+		margin-bottom: 20px
+	
+	.step_block
+		display: block
+		& .step_image
+			max-width: 100%
+			min-height: 170px
+			max-height: 170px
+			margin-right: 0px
+			margin-bottom: 20px
+	.user__description
+		padding: 0px 20px
+	
+	
+@media only screen and (max-width : 630px)
+	.steps__group
+		&-block
+			display: block
+			& img
+				max-width: 100%
+				max-height: 170px
+				margin-right: 0px
+				margin-bottom: 20px
+	
+	.user__public
+		height: 300px
+		
+	.public
+		&__image
+			width: 100%
+			float: none
+			margin-right: 0
+			border-radius: 3px 3px 0px 0px
+		&__title, &__description,	&__date
+			padding-left: 20px
+	
+	
+	
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.page-content__articles .article-preview
+		width: 100%
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+@media print
+	body
+		color: #222
+	.header, .main__sidebar, .article__main-statistics, .page-content__comments, .footer, .recipe__info
+		display: none
+	.block
+		padding: 0px
+		box-shadow: 0 0 0 transparent
+	.main
+		padding: 0px
+	.pbi-avoid
+		page-break-inside: avoid
+	.pbb-always
+		page-break-before: always

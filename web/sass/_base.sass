@@ -1,0 +1,685 @@
+*
+	margin: 0
+	padding: 0
+	outline: 0
+	box-sizing: border-box
+
+body
+	font-size: 16px
+	position: relative
+	line-height: 1.65
+	font-family: roboto-vhavke, sans-serif
+	background: $bg-color
+	color: $text-color
+	min-height: 100vh
+	position: relative
+
+img
+	display: block
+
+h1
+	margin: 0
+
+textarea
+	resize: none
+
+a
+	text-decoration: none
+	color: $accent
+
+	&:hover
+		text-decoration: underline
+
+.main__block-title
+	text-transform: uppercase
+	font-family: robotoCondensed-vhavke, sans-serif
+	margin-bottom: 10px
+	line-height: 1em
+	
+.content-position
+	width: 100%
+	max-width: 1200px
+	padding: 0px 20px
+	margin: 0px auto
+
+.accent-color
+	color: $accent
+
+.main-button
+	display: block
+	text-transform: uppercase
+	padding: 20px
+	background: $accent
+	color: #fff
+	text-align: center
+	border-radius: 3px
+	transition: .2s background
+	font-weight: 700
+	font-family: robotoCondensed-vhavke, sans-serif
+	&:hover
+		text-decoration: none
+		background: $accent_hover
+
+.block
+	display: block
+	background: #fff
+	border-radius: 3px
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+
+.window-blackout
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	z-index: 100
+	background: rgba(0, 0, 0, 0.75)
+	transition: 0s left, .2s opacity 0s
+	&.hidden
+		opacity: 0
+		left: -100%
+
+.main.page-min .content-position
+	max-width: 700px
+
+.header
+	border-bottom: 1px solid $dop_bg-color
+	font-family: robotoCondensed-vhavke, sans-serif
+	text-transform: uppercase
+	font-weight: 700
+	color: $text-color
+	position: relative
+	display: flex
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	background: $bg-color
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+	z-index: 100
+	
+
+.nav__button
+	padding: 15px 20px
+	border-right: 1px solid $dop_bg-color
+	cursor: pointer
+	transition: .2s color
+	&:hover
+		color: $accent
+
+.header__search
+	padding: 10px 20px
+	position: relative
+
+.search__input
+	border: 1px solid $dop_bg-color
+	padding: 8px 20px
+	padding-right: 44px
+	border-radius: 30px
+	font-family: robotoCondensed-vhavke, sans-serif
+	font-weight: 700
+	background: transparent
+	color: $text-color
+	
+	&::-webkit-input-placeholder
+		opacity: 1
+		transition: opacity 0.2s ease
+		text-transform: uppercase
+		color: $text-color
+	&::-moz-placeholder
+		opacity: 1
+		transition: opacity 0.2s ease
+		text-transform: uppercase
+		color: $text-color
+	&:-moz-placeholder
+		opacity: 1
+		transition: opacity 0.2s ease
+		text-transform: uppercase
+		color: $text-color
+	&:-ms-input-placeholder
+		opacity: 1
+		transition: opacity 0.2s ease
+		text-transform: uppercase
+		color: $text-color
+
+	&:focus::-webkit-input-placeholder
+		opacity: 0
+		transition: opacity 0.2s ease
+	&:focus::-moz-placeholder
+		opacity: 0
+		transition: opacity 0.2s ease
+	&:focus:-moz-placeholder
+		opacity: 0
+		transition: opacity 0.2s ease
+	&:focus:-ms-input-placeholder
+		opacity: 0
+		transition: opacity 0.2s ease
+
+.search__button
+	position: absolute
+	top: 0
+	right: 0
+	color: $accent
+	margin: 10px 20px
+	padding: 9px 15px
+	border: none
+	border-radius: 0px 30px 30px 0px
+	background: transparent
+	cursor: pointer
+
+.header__logo
+	position: absolute
+	font-size: 1.9em
+	left: 50%
+	margin-left: -90px
+	top: 0
+	padding: 3px 0px
+	color: $text-color
+	&:hover
+		text-decoration: none
+
+.header__user
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	& a
+		color: $text-color
+		transition: .2s color
+		&:hover
+			text-decoration: none
+			color: $accent
+
+.nav__menu
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 200
+	background: #fff
+	max-width: 350px
+	width: 80vw
+	height: 100vh
+	overflow-y: auto
+	transition: .2s left
+	&.hidden
+		left: -100%
+		
+
+.menu__header
+	display: flex
+	justify-content: space-between
+	background: $title-color
+	color: #fff
+
+.menu__title, .menu__close
+	padding: 20px
+
+.menu__close
+	cursor: pointer
+
+.menu__search
+	display: none
+	position: relative
+	padding: 20px
+	padding-bottom: 0px
+	
+	& .search__input
+    border-radius: 3px
+    width: 100%
+    padding-top: 10px
+    padding-bottom: 10px
+    padding-left: 15px
+    padding-right: 40px
+    font-weight: 700
+	
+	& .search__button
+		margin: 20px
+		padding: 11px 15px
+		border-radius: 0 3px 3px 0
+
+.menu__user
+	display: none
+	padding: 20px
+
+.menu__link
+	display: block
+	padding: 20px
+	padding-left: 45px
+	transition: .2s all
+	color: $text-color
+	position: relative
+	line-height: 1.2em
+	&:hover
+		background: $bg-color
+		text-decoration: none
+		border-right: 5px solid $accent
+
+.link__icon
+	color: $accent
+	position: absolute
+	top: 20px
+	left: 20px
+
+.main
+	padding-top: 77px
+	padding-bottom: 52px
+	& .content-position
+		display: flex
+	&__top-button
+		display: none
+		margin-bottom: 20px
+	
+.page-title
+	padding: 20px
+	&__name
+		text-transform: uppercase
+		color: $text-color
+		font-family: robotoCondensed-vhavke, sans-serif
+		line-height: 1.2em
+	&__description
+		font-style: italic
+		color: $dop_text-color
+		font-family: robotoCondensed-vhavke, sans-serif
+		line-height: 1em
+	&__link:hover
+		text-decoration: none
+	
+.page-content
+	margin-top: 20px
+
+.page-content__articles
+	display: flex
+	flex-flow: wrap
+	justify-content: space-between
+
+.articles3 .article-preview
+  display: grid
+  
+.article-preview
+	margin-bottom: 20px
+	width: 32%
+	color: $text-color
+	&:hover
+		text-decoration: none
+		& .article-preview__title
+			color: $accent
+	&__image
+		width: 100%
+		height: 150px
+		object-fit: cover
+		border-radius: 3px 3px 0px 0px
+	&__title
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
+		padding: 10px 20px
+		font-family: robotoCondensed-vhavke, sans-serif
+		text-transform: uppercase
+		font-size: 1.1em
+		font-weight: 700
+		transition: 0.2s color
+	&__description
+		color: #aaa
+		padding: 0px 20px
+		font-style: italic
+		height: 58px
+		line-height: 1.2em
+		display: -webkit-box
+		-webkit-line-clamp: 3
+		-webkit-box-orient: vertical
+		overflow: hidden
+		text-overflow: ellipsis
+	&__statistics
+		display: flex
+		justify-content: space-between
+		padding: 20px
+		font-family: robotoCondensed-vhavke, sans-serif
+
+.articles3 .article-preview
+  margin-bottom: 0
+
+.preview-statistics
+	&__likes
+		flex: 1
+		text-align: left
+	&__dislikes
+		flex: 1
+		text-align: center
+	&__comments
+		flex: 1
+		text-align: right
+
+.main__content-block
+	flex: 1
+
+.main__sidebar
+	margin-left: 20px
+	width: 245px
+
+.sidebar__filter
+	margin-bottom: 20px
+	padding: 20px 0px
+	color: $text-color
+
+.filter__mobile-btn
+	position: fixed
+	bottom: 25px
+	left: 50%
+	margin-left: -30px
+	width: 60px
+	height: 60px
+	border-radius: 50px
+	background: #ff9800
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3)
+	cursor: pointer
+	line-height: 60px
+	text-align: center
+	font-size: 24px
+	color: #ffffff
+	z-index: 99
+	display: none
+
+.filter__title
+	padding: 0px 20px
+	font-family: robotoCondensed-vhavke, sans-serif
+	text-transform: uppercase
+	line-height: 1em
+
+.f-category__title
+	margin-top: 10px
+	padding: 10px 20px
+	position: relative
+	cursor: pointer
+	line-height: 1em
+
+.f-category__menu-icon
+	position: absolute
+	right: 20px
+	bottom: 12px
+	border: 5px solid transparent
+	border-top: 5px solid #178fff
+	transition: .2s all
+	&.close
+		transform: rotate(-180deg)
+
+.f-category__item
+	display: block
+	padding: 10px 20px
+	cursor: pointer
+	line-height: 0px
+	transition: .2s background
+	&:hover
+		background: $bg-color
+	&:hover .f-item__icon
+		border-color: $accent
+	
+.f-item__input
+	display: none
+	&:checked + .f-item__icon
+		border-color: $accent
+	&:checked + .f-item__icon > .f-item__icon-checked
+		opacity: 1
+	
+.f-item__icon
+	display: block
+	float: left
+	width: 18px
+	height: 18px
+	border: 2px solid #757575
+	border-radius: 3px
+	cursor: pointer
+	margin-right: 8px
+	transition: .2s all
+	
+.f-item__icon-checked
+	width: 10px
+	height: 10px
+	margin: 2px
+	border-radius: 1px
+	background: $accent
+	opacity: 0
+	transition: .2s all
+	
+.f-item__text
+	line-height: 20px
+	
+.sitebar-article
+	width: 100%
+	margin-bottom: 20px
+	
+	
+.footer
+	position: absolute
+	bottom: 0
+	width: 100%
+	color: $text-color
+	font-weight: 700
+	font-family: robotoCondensed-vhavke, sans-serif
+	padding: 10px 0px
+	&__copyright
+		float: left
+		&-text
+			font-size: 1.15em
+			line-height: 1em
+		&-date
+			font-size: 0.9em
+			color: $dop_text-color
+			line-height: 1em
+	&__social
+		float: right
+		line-height: 36px
+		&-link
+			padding: 0 2px
+			color: $text-color
+			transition: 0.2s color
+			&:hover
+				color: $accent
+	
+.page-content__comments > div
+	margin-bottom: 20px
+	padding: 20px
+	
+.page-content__comments .comments-title
+	text-transform: uppercase
+	font-family: robotoCondensed-vhavke, sans-serif	
+	
+.add-comment
+	&__input
+		display: block
+		border-radius: 3px
+		border: 1px solid $dop_bg-color
+		width: 100%
+		padding: 10px 15px
+		transition: .2s all
+		height: 90px
+		margin: 20px 0px
+		&:focus
+			border-color: #ccc
+	&__button
+		border: none
+		cursor: pointer
+		padding: 12px 15px
+		width: 100%
+		max-width: 250px
+	
+.comments-list__block
+	margin-top: 20px
+	
+.cl-block__comment
+	display: flex
+	
+.cl-block__comment + .cl-block__comment	
+	margin-top: 20px
+	
+.comment__content
+	flex: 1
+	margin-left: 20px
+
+.comment
+	&__user-image
+		width: 50px
+		height: 50px
+		border-radius: 50px
+		object-fit: cover
+	&__footer
+		color: $dop_text-color
+		&-link
+			cursor: pointer
+			margin-left: 10px
+	
+form.form .form__group
+	width: 100%
+	margin-top: 20px
+	&__name
+		margin-bottom: 10px
+	&__description
+		font-style: italic
+		color: #757575
+		margin-top: 10px
+	&:first-child
+		margin-top: 0
+	& input, & textarea, & .form-tinymce-editor, & .select
+		border-radius: 3px
+		border: 1px solid #e6e6e6
+		width: 100%
+		padding: 10px 15px
+		transition: .2s all
+		color: $text-color
+		&:focus
+			border: 1px solid #ccc
+	& .input-with-icon
+		padding-right: 40px
+	& textarea
+		height: 100px
+	& .form-tinymce-editor
+		padding-top: 40px
+		position: relative
+	& .form-tinymce-editor::after
+		content: 'Редактор текста'
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		padding: 5px 20px
+		background: #e6e6e6
+		color: #9f9f9f
+	& button
+		padding: 15px 20px
+		text-transform: uppercase
+		border: none
+		border-radius: 3px
+		font-family: robotoCondensed-vhavke, sans-serif
+		font-weight: 700
+		background: $accent
+		color: #fff
+		cursor: pointer
+		transition: .2s background
+		&:hover
+			background: $accent_hover
+	
+.formSelectLoadImage
+	& .formSelectLoadImage-btns
+		display: flex
+		justify-content: space-between
+		max-width: 400px
+		color: $text-color
+	& .formSelectLoadImage-btn
+		flex: 1
+		text-align: center
+		padding: 10px
+		background: #eaeaea
+		border: 1px solid #d9d9d9
+		border-bottom: 0px
+		border-right: 0px
+		cursor: pointer
+		color: #757575
+		transition: .2s all
+		&:first-child
+			border-radius: 3px 0px 0px 0px
+		&:last-child
+			border-radius: 0px 3px 0px 0px
+			border-right: 1px solid #d9d9d9
+		&.active
+			color: #222
+			background: #ffffff
+	& .selectedItem
+		border-radius: 0px 0px 3px 3px
+		border: 1px solid #d9d9d9
+		padding: 10px
+
+form.form .form__group .selectInput
+	position: relative
+	& .select-options
+		z-index: 10
+		display: none
+		width: 100%
+		max-height: 200px
+		overflow-y: auto
+		position: absolute
+		top: 50px
+		left: 0
+		background: #fff
+		border-radius: 3px
+		border: 1px solid #d9d9d9
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		& li
+			list-style: none
+			padding: 5px 20px
+			cursor: pointer
+			&:hover
+				background: #e6e6e6
+	
+form.form .form__group .form-select
+	position: relative
+	border-radius: 3px
+	border: 1px solid #e6e6e6
+	width: 100%
+	padding: 10px 15px
+	transition: .2s all
+	color: #757575
+	cursor: pointer
+	& .select
+		overflow: hidden
+		height: 1px
+		max-height: 1px
+		color: #fff
+		padding: 0
+		margin: 0
+		border: none
+		position: absolute
+	& .select-input
+		position: relative
+		& .select-input-icon
+			position: absolute
+			top: 11px
+			right: 0
+			width: 10px
+			height: 10px
+			border: 5px solid transparent
+			border-top: 5px solid #178fff
+			transition: .2s all
+			&.close
+				transform: rotate(180deg)
+				margin-top: -5px
+	& .select-options
+		color: $text-color
+		z-index: 10
+		display: none
+		width: 100%
+		max-height: 200px
+		overflow-y: auto
+		position: absolute
+		top: 50px
+		left: 0
+		background: #fff
+		border-radius: 3px
+		border: 1px solid #d9d9d9
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+		&.active
+			display: block
+		& li
+			list-style: none
+			padding: 5px 20px
+			cursor: pointer
+			&:hover
+				background: #e6e6e6
